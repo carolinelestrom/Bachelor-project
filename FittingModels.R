@@ -32,7 +32,7 @@ library(rstan) ### Traceplots
 
 #------------------------------------- Per -------------------------------------------------------------------------
 
-data30 = read.csv("/Users/carolinelestrom/Documents/KU/Bachelor/Data/Shark30-100982-Series.csv", header = TRUE)
+data30 = read.csv("Shark30-100982-Series.csv", header = TRUE)
 x = paste(data30$Day, data30$Time)
 data30$POSIXct = as.POSIXct(strptime(x, "%d-%b-%Y %H:%M:%S"))
 
@@ -57,7 +57,7 @@ d30$Depth[1] <- 1
 
 #------------------------------------- Gorm ------------------------------------------------------------------------
 
-data17 = read.csv("/Users/carolinelestrom/Documents/KU/Bachelor/Data/Shark17-tag1-158793-Series.csv", header = TRUE)
+data17 = read.csv("Shark17-tag1-158793-Series.csv", header = TRUE)
 x = paste(data17$Day, data17$Time)
 data17$POSIXct = as.POSIXct(strptime(x, "%d-%b-%Y %H:%M:%S"))
 
@@ -80,7 +80,7 @@ d17 <- data17 %>%
 
 #------------------------------------- Ragnar -----------------------------------------------------------------------
 
-data63 = read.csv2("/Users/carolinelestrom/Documents/KU/Bachelor/Data/Shark6-tag3-138258.csv")
+data63 = read.csv2("Shark6-tag3-138258.csv")
 
 x = paste(data63$Day, data63$Time)
 data63$POSIXct = as.POSIXct(strptime(x, "%d/%b/%Y %H.%M.%S"))
@@ -895,5 +895,5 @@ bayes_6_TOD$fit_stan(chains = n_chain, iter = n_iter)
 
 
 ### Access to fitted models and posterior samples saved under names specified as above
-load("/Users/carolinelestrom/Documents/KU/Bachelor/Data/Modelfit/sims_02_06.RData")
+load("sims_02_06.RData")
 
